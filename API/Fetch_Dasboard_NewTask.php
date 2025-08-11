@@ -5,10 +5,10 @@ session_start();
 $data = [];
 
 try {
-    // Query dasar
-    $query = "SELECT id, order_number, site_id, site_name, customer, destination, created_at, status 
+    // Query dasar untuk mengambil semua data
+    $query = "SELECT id, order_number, site_id, site_name, customer, destination, created_at, status, wh_name 
               FROM tasks 
-              WHERE status = 'pending' AND deleted_at IS NULL";
+              WHERE deleted_at IS NULL";
     
     $params = [];
     $types = "";
@@ -51,8 +51,8 @@ try {
     error_log("Fetch_NewTask - Number of rows returned: " . $result->num_rows);
 
     while ($row = $result->fetch_assoc()) {
-        // Debugging: Log nilai destination
-        error_log("Fetch_NewTask - Row: order_number=" . ($row['order_number'] ?? 'NULL') . ", Destination=" . ($row['destination'] !== '' ? $row['destination'] : 'EMPTY') . ", status=" . ($row['status'] ?? 'NULL'));
+        // Debugging: Log nilai
+        error_log("Fetch_NewTask - Row: order_number=" . ($row['order_number'] ?? 'NULL') . ", Destination=" . ($row['destination'] ?? 'EMPTY') . ", status=" . ($row['status'] ?? 'NULL') . ", wh_name=" . ($row['wh_name'] ?? 'NULL'));
         $data[] = [
             'id' => $row['id'],
             'order_number' => $row['order_number'] ?? '-',
@@ -61,7 +61,8 @@ try {
             'customer' => $row['customer'] ?? '-',
             'destination' => $row['destination'] ?? '-',
             'created_at' => $row['created_at'] ?? '-',
-            'status' => $row['status'] ?? '-'
+            'status' => $row['status'] ?? '-',
+            'wh_name' => $row['wh_name'] ?? '-'
         ];
     }
 
@@ -69,7 +70,7 @@ try {
 } catch (mysqli_sql_exception $e) {
     error_log("Fetch_NewTask - Error: " . $e->getMessage() . " | Query: " . $query);
     header('Content-Type: application/json');
-    echo json_encode(['error' => 'Terjadi kesalahan saat mengambil data: ' . $e->getMessage()]);
+    echo json_encode(['error' => 'Terjadi kesaluwarsa saat mengambil data: ' . $e->getMessage()]);
     exit();
 }
 
