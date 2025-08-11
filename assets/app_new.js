@@ -282,8 +282,8 @@ $(document).ready(function () {
             if (!completedTaskTable) {
                 completedTaskTable = $("#tabelCompletedTask").DataTable({
                     ajax: {
-                        url: "../API/Fetch_CompletedTask.php",
-                        dataSrc: "",
+                        url: "../API/Fetch_ReportTask.php",
+                        dataSrc: "data",
                     },
                     columns: [
                         {
@@ -293,12 +293,18 @@ $(document).ready(function () {
                             },
                         },
                         { data: "order_number" },
-                        { data: "site_id" },
-                        { data: "site_name" },
-                        { data: "customer" },
                         { data: "destination" },
-                        { data: "created_at" },
-                        { data: "status" },
+                        { data: "driver_name" },
+                        { data: "qty" },
+                        {
+                            data: "total_cbm",
+                            render: function (data, type, row) {
+                                return parseFloat(data).toFixed(2);
+                            },
+                        },
+                        { data: "date_pickup" },
+                        { data: "submit_by" },
+                        { data: "wh_name" },
                         {
                             data: null,
                             render: function (data, type, row) {
