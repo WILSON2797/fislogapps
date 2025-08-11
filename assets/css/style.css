@@ -1291,9 +1291,9 @@ th {
 
 /* styling untuk icon user pojok kanan */
 .user-icon-circle {
-    width: 15px;
-    height: 15px;
-    background-color: #f8f9fa; /* Background abu-abu terang */
+    width: 50px;
+    height: 50px;
+    background-color: #b1b5b9; /* Background abu-abu terang */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1301,19 +1301,19 @@ th {
     transition: all 0.3s ease;
     border: 2px solid #e9ecef;
     margin-right: 15px !important;
-    padding-top: 20px !important;
+    padding-top: 7px !important;
 
 }
 
 .user-icon-circle:hover {
-    background-color: #e9ecef;
+    background-color: #3771ac;
     border-color: #dee2e6;
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .user-icon-circle .fa-user-tie {
-    font-size: 25px !important;
+    font-size: 23px !important;
     color: #808080; 
     
 }
@@ -1322,23 +1322,122 @@ th {
      display: none !important;
 }
 
+/*  untuk style Mobile */
+
+/* Media Query untuk Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .user-icon-circle {
+        width: 30px !important;
+        height: 30px !important;
+        margin-right: 1px !important;
+        padding-top: 1px !important;
+        position: absolute !important;
+        right: 1px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }
+    
+    .user-icon-circle:hover {
+        transform: translateY(-50%) scale(1.05) !important;
+    }
+    
+    .user-icon-circle .fa-user-tie {
+        font-size: 17px !important;
+    }
+    
+    /* Pastikan container header memiliki position relative */
+    .navbar,
+    .header-container,
+    .top-bar {
+        position: relative !important;
+    }
+} 
+/* style Mobile End */
+
 .dropdown-menu {
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: hsl(0, 9%, 85%) !important;
     border: 1px solid #e0e0e0;
-    margin-top: 5px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #585757;
+    margin-top: 3px !important;
     transform: translateY(-10px) !important; /* Geser 10px ke atas */
+    min-width: 150px;
+    animation: fadeInDown 0.3s ease-out;
+    padding: 5px !important;
+}
+
+/* Animasi saat dropdown muncul */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dropdown-item {
-    padding: 5px 10px;
+    font-size: 15px;
     transition: background-color 0.2s ease;
+    display: flex !important; /* Pastikan menggunakan flexbox */
+    align-items: center !important;
+    gap: 6px; /* jarak icon dan teks kecil */
+    padding: 8px 5px !important; /* Kurangi padding kiri-kanan untuk rapat ke kiri */
 }
 
 .dropdown-item:hover {
-    background-color: #3380cc !important;
+    background-color: #fff !important;
     color: #283949;
-    border-radius: 5px !important;
+    border-radius: 10px !important;
+    margin: 0 !important; /* Pastikan tidak ada margin saat hover */
+}
+
+/* Icon styling */
+.dropdown-item i {
+    font-size: 16px;
+    width: 16px; /* Set width tetap untuk konsistensi */
+    min-width: 16px; /* minimal supaya sejajar */
+    text-align: left;
+    margin: 0 !important; /* Hilangkan margin pada icon */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Media Query untuk Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        min-width: 120px !important;
+        padding: 2px !important;
+        margin-top: 8px !important;
+        transform: translateY(-5px) !important; /* Kurangi jarak geser */
+        border-radius: 8px !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+        right: 5px !important; /* Posisikan ke kanan */
+        left: auto !important;
+    }
+    
+    .dropdown-item {
+        font-size: 14px !important;
+        padding: 4px 2px !important; /* Tambah padding untuk touch friendly */
+        gap: 5px !important; /* Tambah jarak icon dan teks */
+        border-radius: 6px !important;
+    }
+    
+    .dropdown-item:hover,
+    .dropdown-item:focus,
+    .dropdown-item:active {
+        background-color: #3380cc !important;
+        color: #ffffff !important;
+        border-radius: 6px !important;
+    }
+    
+    .dropdown-item i {
+        font-size: 14px !important;
+        width: 18px !important;
+        min-width: 18px !important;
+    }
 }
 
 
