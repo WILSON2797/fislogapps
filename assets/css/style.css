@@ -5,7 +5,7 @@
 
 /* ====== GAYA UMUM ====== */
 body {
-  background: #eee;
+   background: linear-gradient(to bottom right, rgba(0, 139, 139, 0.9), rgba(0, 0, 0, 0.95));
 }
 
 :root {
@@ -189,11 +189,11 @@ body {
 
 /* ====== GAYA SIDEBAR ====== */
 #side_nav {
-  background: #008080; /* Latar belakang hitam */
+  background: linear-gradient(80deg, teal, #1a1a1a); /* gradasi dari teal ke hitam */
   min-width: 250px; /* Lebar minimum */
   max-width: 250px; /* Lebar maksimum */
   transition: all 0.3s; /* Transisi halus */
-  box-shadow: 5px 0 20px rgba(70, 100, 80, 0.5) !important;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.4) !important; /* shadow lebih gelap */
 }
 
 /* Tambahan: Pastikan sidebar memiliki z-index */
@@ -624,25 +624,104 @@ textarea::placeholder {
   align-items: center !important;
 }
 
+.dataTables_filter {
+    display: none !important;
+}
+
+table {
+  table-layout: fixed !important; /* Penting untuk konsistensi lebar kolom */
+  width: 100% !important;
+  /* border-collapse: collapse !important; */
+}
+
+/* Data cells styling */
+td {
+  padding: 8px !important;
+  word-wrap: break-word !important;
+  overflow: hidden !important;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 8% !important;
+  min-width: 50px !important;
+  max-width: 60px !important;
+}
+
 th {
   text-align: center !important; /* Rata tengah untuk header tabel */
-  background-color: #008b8b !important;
+  background-color: rgba(0, 70, 70, 0.95) !important; /* teal gelap hampir hitam */
   color: #fff !important; /* Warna teks putih */
+  border:  2px solid rgba(227, 235, 227, 0.733) !important;
+}
+
+
+.table-search th {
+    padding: 3px 4px !important;
+    background-color: #fff !important; /* Latar belakang abu-abu untuk header pencarian */
+    color: #fff !important; /* Warna teks putih */
+}
+
+.table-search th input {
+    width: 100% !important; /* Lebar penuh */
+    min-width: 100px !important; /* Lebar minimum */
+    padding: 6px 8px !important; /* Padding yang sesuai */
+    border-radius: 4px !important;
+    font-size: 12px !important; /* Font size yang lebih kecil */
+    background-color: #fff !important;
+    box-sizing: border-box !important; /* Pastikan padding dihitung dalam lebar */
+}
+
+
+#tabelNewTask th:last-child,
+#tabelNewTask td:last-child {
+  width: 80px !important;
+  text-align: center !important;
+}
+#OrderReq_Detail th:last-child,
+#OrderReq_Detail td:last-child {
+  width: 80px !important;
+  text-align: center !important;
+}
+#tabelCompletedTask th:last-child,
+#tabelCompletedTask td:last-child {
+  width:180px !important;
+  text-align: center !important;
+}
+
+/* Untuk th kolom pertama */
+th:first-child {
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    text-align: center !important;
+}
+
+/* Untuk input di dalam th kolom pertama */
+th:first-child input {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    font-size: 11px !important;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .table-dark tr th:first-child {
-  border-top-left-radius: 10px !important;
-  border-bottom-left-radius: 10px !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
 }
 
 .table-dark tr th:last-child {
-  border-top-right-radius: 10px !important;
-  border-bottom-right-radius: 10px !important;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
 }
 
 /* Pastikan border terlihat konsisten */
 .table-bordered thead th {
-  border: 0px solid #454d55 !important;
+  border: 0.5px solid rgba(69, 77, 85, 0.2) !important; /* Sangat tipis */
+  border-bottom: none !important;
+  border-top: 0.5px solid rgba(69, 77, 85, 0.2) !important; /* Sangat tipis */
 }
 
 .bg-white {
@@ -666,7 +745,7 @@ th {
 }
 
 .form-control {
-  border: 2px solid #4da6ff !important; /* Warna biru */
+  border: 1px solid #9ca3af !important;
   border-radius: 4px;
   padding: 8px 12px;
   outline: none; /* Menghilangkan outline default saat fokus */
@@ -847,7 +926,7 @@ th {
   bottom: 0;
   left: 0;
   width: 100%; /* Lebar penuh */
-  background-color: #5F9EA0; /* Warna dasar sesuai dengan HTML Anda */
+  background-color: rgba(0, 70, 70, 0.95) !important; /* teal gelap hampir hitam */
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.15); /* Bayangan lebih jelas */
@@ -1029,6 +1108,7 @@ th {
   color: #cc0000; /* Warna merah lebih gelap saat hover */
 }
 
+
 #tabelusers th.action-column,
 #tabelusers td:nth-child(5) {
   width: 90px !important;
@@ -1039,8 +1119,8 @@ th {
 
 #tabelusers th.users-no,
 #tabelusers td:nth-child(1) {
-  width: 15px !important;
-  min-width: 20px !important;
+  width: 50px !important;
+  min-width: 50px !important;
   max-width: 50px !important;
   text-align: center;
 }
@@ -1469,4 +1549,62 @@ th {
 .row.mb-4 .card-text {
     font-size: 2rem; /* Sesuaikan ukuran teks angka */
     font-weight: bold;
+}
+
+
+.dataTables_info {
+  font-size: 12px;
+  align-items: center;
+}
+
+/* Tombol aktif (halaman sekarang) */
+.dataTables_paginate .paginate_button.current {
+    background: rgba(0, 0, 0, 0.75) !important;
+    color: #fff !important;
+    border-radius: 4px;
+}
+
+/* Tombol disabled (tidak bisa diklik) */
+.dataTables_paginate .paginate_button.disabled {
+    color: #aaa !important;
+    cursor: default !important;
+}
+
+/* Hilangkan border table pagination bawaan */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    border: none !important;
+}
+
+/* Perbesar tombol pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 8px 14px !important;
+    font-size: 10px !important;
+    border-radius: 50% !important;
+    margin: 0 3px;
+    background: #f4f4f4 !important;
+    border: 1px solid #ddd !important;
+    color: #333 !important;
+}
+
+/* Efek hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #007bff !important;
+    color: white !important;
+    border: 1px solid #007bff !important;
+}
+
+/* Tombol aktif */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    /* background: #007bff !important; */
+    color: white !important;
+    border: 1px solid #007bff !important;
+}
+
+.dataTables_wrapper .dataTables_info {
+    float: left !important;
+    margin-right: 15px;
+}
+.dataTables_wrapper .dataTables_paginate {
+    float: right !important;
+    margin-right: 10px;
 }
