@@ -76,6 +76,18 @@ if (!isset($_SESSION['username'])) {
                                     <th style="background-color: #008080;">Pickup Date</th>
                                     <th style="background-color: #008080;">Submit By</th>
                                 </tr>
+
+                                <tr class="table-search">
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                </tr>
+
                             </thead>
                             <tbody></tbody>
                         </table>

@@ -28,26 +28,27 @@ if (!isset($_SESSION['username'])) {
             <div class="container-fluid">
                 <button class="btn px-1 py-0 open-btn me-2"><i class="fas fa-bars"></i></button>
                 <div class="dropdown">
-                <a href="#" class="navbar-brand dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="user-icon-circle">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                    <li>
-                        <a class="dropdown-item" href="profile.php">
-                            <i class="fa-solid fa-user-circle"></i>
-                            Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="logout.php">
-                            <i class="fa-solid fa-sign-out-alt"></i>
-                            Log Out
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                    <a href="#" class="navbar-brand dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <div class="user-icon-circle">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li>
+                            <a class="dropdown-item" href="profile.php">
+                                <i class="fa-solid fa-user-circle"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="logout.php">
+                                <i class="fa-solid fa-sign-out-alt"></i>
+                                Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -62,25 +63,37 @@ if (!isset($_SESSION['username'])) {
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                <div class="table-wrapper">
-                    <table id="tabelCompletedTask" class="table table-striped table-hover table-bordered">
-                        <thead class="table-dark">
-                            <tr>
-                                <th style="background-color: #008080;">No</th>
-                                <th style="background-color: #008080;">SDR Number</th>
-                                <th style="background-color: #008080;">Destination</th>
-                                <th style="background-color: #008080;">Driver Name</th>
-                                <th style="background-color: #008080;">Total Collie</th>
-                                <th style="background-color: #008080;">Total CBM</th>
-                                <th style="background-color: #008080;">Date Pickup</th>
-                                <th style="background-color: #008080;">Submit By</th>
-                                <th style="background-color: #008080;">Submitted by (Region)</th>
-                                <th style="background-color: #008080;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+                    <div class="table-wrapper">
+                        <table id="tabelCompletedTask" class="table table-striped table-hover table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th style="background-color: #008080;">No</th>
+                                    <th style="background-color: #008080;">SDR Number</th>
+                                    <th style="background-color: #008080;">Destination</th>
+                                    <th style="background-color: #008080;">Driver Name</th>
+                                    <th style="background-color: #008080;">Total Collie</th>
+                                    <th style="background-color: #008080;">Total CBM</th>
+                                    <th style="background-color: #008080;">Date Pickup</th>
+                                    <th style="background-color: #008080;">Submit By</th>
+                                    <th style="background-color: #008080;">Submitted by (Region)</th>
+                                    <th style="background-color: #008080;">Action</th>
+                                </tr>
+                                <tr class="table-search">
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,7 +127,8 @@ if (!isset($_SESSION['username'])) {
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label class="form-label">Destination</label>
-                            <input type="text" name="destination" class="form-control" readonly id="destination" required>
+                            <input type="text" name="destination" class="form-control" readonly id="destination"
+                                required>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -166,6 +180,16 @@ if (!isset($_SESSION['username'])) {
                                 <th>UOM</th>
                                 <th style="width: 20px; align-items: center;">Action</th>
                             </tr>
+                            <tr class="table-search">
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th></th>
+                                </tr>
                         </thead>
                         <tbody></tbody>
                     </table>
@@ -175,6 +199,7 @@ if (!isset($_SESSION['username'])) {
     </div>
 </div>
 <script>
-    var userRole = "<?php echo isset($_SESSION['role']) ? htmlspecialchars($_SESSION['role'], ENT_QUOTES, 'UTF-8') : ''; ?>";
+var userRole =
+"<?php echo isset($_SESSION['role']) ? htmlspecialchars($_SESSION['role'], ENT_QUOTES, 'UTF-8') : ''; ?>";
 </script>
 <?php include 'layouts/footer.php'; ?>

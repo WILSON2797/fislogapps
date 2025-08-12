@@ -28,16 +28,27 @@ if (!isset($_SESSION['username'])) {
             <div class="container-fluid">
                 <button class="btn px-1 py-0 open-btn me-2"><i class="fas fa-bars"></i></button>
                 <div class="dropdown">
-                        <a href="#" class="navbar-brand dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="user-icon-circle">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                        </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                    <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-                    <li><a class="dropdown-item" href="logout.php">Log out</a></li>
-                </ul>
-            </div>
+                    <a href="#" class="navbar-brand dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <div class="user-icon-circle">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li>
+                            <a class="dropdown-item" href="profile.php">
+                                <i class="fa-solid fa-user-circle"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="logout.php">
+                                <i class="fa-solid fa-sign-out-alt"></i>
+                                Log Out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div class="card m-3 shadow-sm">
@@ -63,6 +74,13 @@ if (!isset($_SESSION['username'])) {
                                     <th style="background-color: #008080;">Dimensi</th>
                                     <th style="background-color: #008080;">UOM</th>
                                     <th style="background-color: #008080; "class="action-column">Action</th>
+                                </tr>
+                                <tr class="table-search">
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody></tbody>

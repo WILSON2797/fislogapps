@@ -74,6 +74,15 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'user';
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
+                        <tr class="table-search">
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th></th>
+                                </tr>
                     </thead>
                     <tbody>
                         <!-- Data akan diisi oleh DataTables -->

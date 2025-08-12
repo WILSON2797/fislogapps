@@ -76,25 +76,37 @@ if (!isset($_SESSION['username'])) {
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                <div class="table-wrapper">
-                    <table id="tabelNewTask" class="table table-striped table-hover table-bordered">
-                        <thead class="table-dark">
-                            <tr>
-                                <th class="hide-mobile" style="background-color: #008080;">No</th>
-                                <th style="background-color: #008080;">SDR Number</th>
-                                <th style="background-color: #008080;">Site ID</th>
-                                <th style="background-color: #008080;">Site Name</th>
-                                <th style="background-color: #008080;">Customer / Supplier</th>
-                                <th style="background-color: #008080;">Destination</th>
-                                <th style="background-color: #008080;">Create Date</th>
-                                <th style="background-color: #008080;">Create By</th>
-                                <th style="background-color: #008080;">Status</th>
-                                <th style="background-color: #008080;">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+                    <div class="table-wrapper">
+                        <table id="tabelNewTask" class="table table-striped table-hover table-bordered">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="hide-mobile" style="background-color: #008080;">No</th>
+                                    <th style="background-color: #008080;">SDR Number</th>
+                                    <th style="background-color: #008080;">Site ID</th>
+                                    <th style="background-color: #008080;">Site Name</th>
+                                    <th style="background-color: #008080;">Customer / Supplier</th>
+                                    <th style="background-color: #008080;">Destination</th>
+                                    <th style="background-color: #008080;">Create Date</th>
+                                    <th style="background-color: #008080;">Create By</th>
+                                    <th style="background-color: #008080;">Status</th>
+                                    <th style="background-color: #008080;">Action</th>
+                                </tr>
+                                <tr class="table-search">
+                                    <th class="hide-mobile"><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,7 +200,7 @@ if (!isset($_SESSION['username'])) {
                             <div class="format-info">
                                 <span>Supported formats:</span>
                                 <span class="format-badge">xlsx</span>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -232,7 +244,7 @@ if (!isset($_SESSION['username'])) {
             <div class="modal-body">
                 <form id="addItemForm" action="../modules/Proses_AddItems.php" method="POST">
                     <input type="hidden" name="order_number" id="order_number">
-                    
+
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label class="form-label">Date Pickup</label>
@@ -248,7 +260,8 @@ if (!isset($_SESSION['username'])) {
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label class="form-label">Destination</label>
-                            <input type="text" name="destination" class="form-control" readonly id="destination" required>
+                            <input type="text" name="destination" class="form-control" readonly id="destination"
+                                required>
                         </div>
                     </div>
                     <div class="table-responsive">

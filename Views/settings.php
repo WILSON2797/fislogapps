@@ -81,6 +81,14 @@ if (!isset($_SESSION['role']) || ($_SESSION['role'] !== 'admin' && $_SESSION['ro
                                 <th style="background-color: #5F9EA0; color: #fff;">Role</th>
                                 <th style="background-color: #5F9EA0; color: #fff;"class="action-column">Action</th>
                             </tr>
+                            <tr class="table-search">
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th><input type="text" class="form-control form-control-sm"></th>
+                                    <th></th>
+                                </tr>
                         </thead>
                         <tbody>
                             <!-- Data akan diisi oleh DataTables melalui API -->
