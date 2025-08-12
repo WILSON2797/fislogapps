@@ -653,6 +653,9 @@ th {
   background-color: rgba(0, 70, 70, 0.95) !important; /* teal gelap hampir hitam */
   color: #fff !important; /* Warna teks putih */
   border:  2px solid rgba(227, 235, 227, 0.733) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 
@@ -1607,4 +1610,43 @@ th:first-child input {
 .dataTables_wrapper .dataTables_paginate {
     float: right !important;
     margin-right: 10px;
+}
+
+
+/* Override table-layout khusus untuk tabel item */
+.item-table {
+    table-layout: auto !important; /* Override fixed layout */
+}
+
+/* Override width constraints untuk tabel item */
+.item-table th:nth-child(1),
+.item-table td:nth-child(1) {
+    width: auto !important; /* Override width 8% */
+    min-width: 200px !important; /* Override 50px ke 200px */
+    max-width: none !important; /* Hilangkan max-width */
+}
+
+/* Prevent text wrapping untuk header tabel item */
+.item-table th {
+    white-space: nowrap !important;
+    padding: 12px 8px !important;
+}
+
+/* Optional: Atur width kolom lainnya untuk tabel item */
+.item-table th:nth-child(2), .item-table td:nth-child(2) { min-width: 120px !important; }
+.item-table th:nth-child(3), .item-table td:nth-child(3) { min-width: 140px !important; }
+.item-table th:nth-child(4), .item-table td:nth-child(4) { min-width: 150px !important; }
+
+/* Center alignment untuk kolom Action pada tabel item-table */
+.item-table th:nth-child(5),
+.item-table td:nth-child(5) {
+    text-align: center !important;
+    vertical-align: middle !important;
+    min-width: 100px !important;
+    width: 100px !important;
+}
+
+/* Tambahan: Untuk memastikan button juga center jika ada multiple button */
+.item-table td:nth-child(5) button {
+    margin: 2px !important;
 }
