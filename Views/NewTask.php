@@ -78,7 +78,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="table-responsive">
                     <div class="table-wrapper">
                         <table id="tabelNewTask" class="table table-striped table-hover table-bordered">
-                            <thead class="table-dark">
+                            <thead>
                                 <tr>
                                     <th class="hide-mobile" style="background-color: #008080;">No</th>
                                     <th style="background-color: #008080;">SDR Number</th>

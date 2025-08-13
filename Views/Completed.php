@@ -132,7 +132,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered item-table">
                             <thead>
                                 <tr>
                                     <th>Item Name (Nama Barang)</th>
