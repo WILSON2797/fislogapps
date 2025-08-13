@@ -308,18 +308,13 @@ hr.h-color {
 }
 
 table.dataTable {
-  width: 100% !important; /* Lebar penuh */
-  max-width: 100% !important; /* Lebar maksimum */
+  width: auto !important; /* Ubah dari 100% ke auto */
+  min-width: 100% !important; /* Minimum tetap 100% */
+  table-layout: auto !important; /* Tambah ini */
   margin-right: 2px !important; /* Margin kanan kecil */
 }
 
-/* Pengaturan lebar kolom */
-table.dataTable thead th,
-table.dataTable tbody td {
-  white-space: nowrap; /* Teks tidak dibungkus */
-  overflow: auto; /* Scroll jika diperlukan */
-  text-overflow: ellipsis; /* Teks terpotong diberi elipsis */
-}
+
 
 /* Gaya pagination */
 .pagination {
@@ -457,7 +452,7 @@ table.dataTable tbody td {
   /* Pastikan tabel utama benar-benar penuh */
   table.dataTable {
     margin: 0 !important; /* Hilangkan margin */
-    width: 100% !important; /* Lebar penuh */
+    width: auto !important; 
     max-width: 100% !important; /* Lebar maksimum */
   }
 
@@ -637,16 +632,16 @@ table {
 /* Data cells styling */
 td {
   padding: 8px !important;
-  word-wrap: break-word !important;
+  white-space: nowrap !important;  
   overflow: hidden !important;
 }
 
-th:nth-child(1),
+/* th:nth-child(1),
 td:nth-child(1) {
   width: 8% !important;
   min-width: 50px !important;
   max-width: 60px !important;
-}
+} */
 
 th {
   text-align: center !important; /* Rata tengah untuk header tabel */
@@ -1650,3 +1645,21 @@ th:first-child input {
 .item-table td:nth-child(5) button {
     margin: 2px !important;
 }
+
+
+
+/* Perbaikan khusus untuk mobile */
+@media (max-width: 767px) {
+    table.dataTable {
+        font-size: 12px !important; /* Sedikit kecilkan font untuk mobile */
+    }
+    
+    
+    
+    .table-responsive {
+        /* Smooth scrolling untuk mobile */
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+}
+
